@@ -1,0 +1,38 @@
+:root {
+  --text-primary: #4E4E4E;
+  --text-orange: #F09035;
+  --orange-dark: #DC6E05;
+  --text-red: #ED3237;
+  --text-white: #FFFFFF;
+  --text-gray: #AEB6C1;
+  --background-header: #F4F4F4;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+}
+
+ul,
+li,
+a {
+  text-decoration: none;
+  list-style: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+
+  display: flex;
+  justify-content: center;
+}
+
+body,
+html {
+  background-color: var(--text-white);
+}
