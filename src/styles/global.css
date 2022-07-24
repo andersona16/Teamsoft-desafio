@@ -6,6 +6,8 @@
   --text-white: #FFFFFF;
   --text-gray: #AEB6C1;
   --background-header: #F4F4F4;
+  --color-svg: #D80000;
+  --color-line: #E8A634;
 }
 
 * {
@@ -30,6 +32,12 @@ button {
 
   display: flex;
   justify-content: center;
+}
+
+svg {
+  width: 24px;
+  height: 24px;
+  color: var(--color-svg);
 }
 
 body,

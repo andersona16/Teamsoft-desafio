@@ -1,0 +1,46 @@
+.container-offer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container-offer__info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.container-offer__info h1 {
+  font-size: 28px;
+  color: var(--text-primary);
+}
+
+.container-offer__info p {
+  font-size: 20px;
+  color: var(--text-primary);
+  max-width: 597px;
+}
+
+.container-offer__info img {
+  max-width: 597px;
+  max-height: 388px;
+}
+
+
+.container-offer__price {
+  display: flex;
+  gap: 17px;
+  margin: 20px 0px 0px 0px;
+}
+
+.container-offer__price h1 {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--orange-dark);
+
+}
+
+.container-offer__price s {
+  font-size: 32px;
+  color: var(--text-primary);
+}

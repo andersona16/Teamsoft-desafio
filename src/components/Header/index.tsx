@@ -4,7 +4,6 @@ import Account from "../../assets/img/account.svg";
 import "./styles.css";
 import Button from "../Button";
 import { Input } from "../Input";
-import { FaArrowDown } from "react-icons/fa";
 
 function Header() {
   return (
