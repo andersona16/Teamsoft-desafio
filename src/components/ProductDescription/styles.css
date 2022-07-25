@@ -22,10 +22,9 @@
 }
 
 .container-offer__info img {
-  max-width: 597px;
-  max-height: 388px;
+  max-width: 100%;
+  height: auto;
 }
-
 
 .container-offer__price {
   display: flex;
@@ -37,10 +36,31 @@
   font-size: 32px;
   font-weight: 500;
   color: var(--orange-dark);
-
 }
 
 .container-offer__price s {
   font-size: 32px;
   color: var(--text-primary);
+}
+
+@media screen and (max-width: 425px) {
+  .container-offer {
+    padding: 16px;
+  }
+
+  .container-offer__info h1 {
+    font-size: 18px;
+  }
+
+  .container-offer__info p {
+    font-size: 16px;
+    line-height: 20px;
+    max-width: 343px;
+    max-height: 78px;
+  }
+
+  .container-offer__price h1,
+  .container-offer__price s {
+    font-size: 14px;
+  }
 }

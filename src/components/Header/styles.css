@@ -13,14 +13,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
 
   padding: 16px 40px;
   gap: 24px;
 
+  max-width: 100%;
   width: 1280px;
   height: auto;
-
 }
 
 .header__buttons {
@@ -28,6 +27,12 @@
   justify-content: center;
   align-items: center;
   gap: 24px;
+}
+
+.header_buttons-andress-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header__buttons-address {
@@ -38,7 +43,8 @@
   padding: 8px;
   background-color: rgb(255, 255, 255);
   border-radius: 4px;
-  box-shadow: rgb(0 0 0 / 10%) 0px 1px
+  box-shadow: rgb(0 0 0 / 10%) 0px 1px;
+  cursor: pointer;
 }
 
 .header__buttons-address button {
@@ -70,4 +76,40 @@
   align-items: center;
   gap: 8px;
   color: var(--text-red);
+}
+
+@media screen and (max-width: 1150px) {
+  .header__logo img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 910px) {
+  .header__buttons-login span,
+  .header__buttons-cart span {
+    display: none;
+  }
+
+  .header__buttons:nth-child(3) button:hover {
+    transform: scale(1.15);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .header__buttons {
+    display: none;
+  }
+
+  .header__navbar,
+  .header__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header__navbar,
+  .header__logo:hover {
+    content: "<";
+  }
 }

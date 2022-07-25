@@ -1,13 +1,13 @@
 :root {
-  --text-primary: #4E4E4E;
-  --text-orange: #F09035;
-  --orange-dark: #DC6E05;
-  --text-red: #ED3237;
-  --text-white: #FFFFFF;
-  --text-gray: #AEB6C1;
-  --background-header: #F4F4F4;
-  --color-svg: #D80000;
-  --color-line: #E8A634;
+  --text-primary: #4e4e4e;
+  --text-orange: #f09035;
+  --orange-dark: #dc6e05;
+  --text-red: #ed3237;
+  --text-white: #ffffff;
+  --text-gray: #aeb6c1;
+  --background-header: #f4f4f4;
+  --color-svg: #d80000;
+  --color-line: #e8a634;
 }
 
 * {
@@ -34,13 +34,13 @@ button {
   justify-content: center;
 }
 
-svg {
-  width: 24px;
-  height: 24px;
-  color: var(--color-svg);
-}
-
 body,
 html {
   background-color: var(--text-white);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

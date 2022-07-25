@@ -1,5 +1,5 @@
 import React, { ButtonHTMLAttributes, ComponentType, forwardRef } from "react";
-import IconBaseProps from "react-icons";
+import { IconBaseProps } from "react-icons";
 
 import "./styles.css";
 
@@ -25,7 +25,7 @@ const Button = forwardRef<HTMLButtonElement, IButtonProps>(
         <>
           {Icon && (
             <Icon
-              size={14}
+              size={24}
               style={
                 Icon && !children ? { marginRight: 0 } : { marginRight: 8 }
               }

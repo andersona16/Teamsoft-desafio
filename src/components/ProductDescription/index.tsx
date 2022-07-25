@@ -2,26 +2,18 @@ import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import Hamburguer from "../../assets/img/hamburger.png";
 import "./styles.css";
-
-interface IProduct {
-  id: string;
-  description: string;
-  nm_product: string;
-  vl_discount: number;
-  vl_price: number;
-}
+import { IProduct } from "../../types/interface";
 
 function ProductDescription() {
   const [produto, setProduto] = useState<IProduct[]>([]);
   useEffect(() => {
-    async function teste() {
+    async function LoadProductDescription() {
       const response = await api.get<IProduct[]>("/products");
 
-      console.log(response);
       setProduto(response.data);
     }
 
-    teste();
+    LoadProductDescription();
   }, []);
 
   return (
