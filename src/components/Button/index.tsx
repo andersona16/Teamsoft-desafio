@@ -12,7 +12,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button = forwardRef<HTMLButtonElement, IButtonProps>(
-  ({ icon: Icon, height, width, children, onClick }, ref) => {
+  ({ icon: Icon, height, width, children, onClick, ...rest }, ref) => {
     return (
       <button
         className="ButtonCustom"
@@ -21,6 +21,8 @@ const Button = forwardRef<HTMLButtonElement, IButtonProps>(
           height,
           width,
         }}
+        {...rest}
+        ref={ref}
       >
         <>
           {Icon && (

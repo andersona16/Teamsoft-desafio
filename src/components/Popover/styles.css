@@ -1,7 +1,34 @@
 .popover__container {
   position: absolute;
-  bottom: 735px;
-  right: 250px;
+
+  top: 100%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background-color: #fff;
+
+  width: 208px;
+
+  margin-top: 8px;
+}
+
+.popover__container::before {
+  content: "";
+
+  position: absolute;
+
+  bottom: 100%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 0;
+  height: 0;
+
+  border-style: solid;
+  border-width: 8px;
+  border-color: transparent transparent #f09035 transparent;
 }
 
 .popover__container-title {
@@ -9,7 +36,10 @@
 
   color: #fff;
   background-color: #f09035;
-  padding: 10px;
+
+  padding: 9px 11px;
+
+  border-radius: 4px 4px 0 0;
 }
 .popover__container-content {
   display: flex;
@@ -17,6 +47,8 @@
   justify-content: center;
   gap: 8px;
   background: #f8f8f8;
+  padding: 9px 11px;
+  border-radius: 0 0 4px 4px;
 }
 
 .popover__container-subtitle {
@@ -34,6 +66,11 @@
 
   padding: 0px 10px;
 }
+.poppover-orderInformation span {
+  font-size: 14px;
+  color: #bc2e31;
+  font-weight: bold;
+}
 
 .poppover-orderInformation li:before {
   content: "";
@@ -43,12 +80,4 @@
   margin-right: 5px;
   background: #084583;
   border-radius: 10px;
-}
-
-span {
-  margin-left: -10px;
-}
-
-.triangulo {
-  height: 10px;
 }

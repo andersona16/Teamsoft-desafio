@@ -181,3 +181,13 @@
     width: 100%;
   }
 }
+
+.section__loader {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+}

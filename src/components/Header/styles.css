@@ -70,6 +70,32 @@
   color: rgb(78, 78, 78);
 }
 
+.header__buttons-cart {
+  position: relative;
+}
+
+.header__buttons-cart-quantity-indicator {
+  width: 15px;
+  height: 15px;
+
+  background-color: #F09035;
+
+  border-radius: 50%;
+
+  color: #fff;
+
+  position: absolute;
+
+  font-size: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  bottom: calc(100% - 7px);
+  left: 25px;
+}
+
 .header__buttons-login button,
 .header__buttons-cart button {
   display: flex;
