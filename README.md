@@ -2,6 +2,8 @@
 
 ### ✅ Demonstração da aplicação
 
+⚠️ Observações: Funcionalidade de adicionar produto ao carrinho você tem que adicionar todos os itens.
+
 [Clique Aqui](https://teamsoft-desafio.vercel.app/).
 
 
