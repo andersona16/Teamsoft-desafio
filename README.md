@@ -45,7 +45,7 @@ $ yarn
 # Execute a aplicação em modo de desenvolvimento
 $ yarn start
 
-# A aplicação será aberta na porta:3000 - acesse http://127.0.0.1:5173/
+# A aplicação será aberta na porta:5173 - acesse http://127.0.0.1:5173/
 
 ```
 ### 🛠 Stack utilizada
