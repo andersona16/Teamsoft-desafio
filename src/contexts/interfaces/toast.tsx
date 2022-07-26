@@ -12,7 +12,7 @@ interface IToastContext {
 
 export const ToastContext = createContext<IToastContext>({} as IToastContext);
 
-export const ToastProvider: FC = ({ children }) => {
+export const ToastProvider: FC = () => {
   const [toasts, setToasts] = useState<IToastProps[]>([]);
 
   const addToast = useCallback(({ title, type, message }: IToastProps) => {
@@ -38,7 +38,7 @@ export const ToastProvider: FC = ({ children }) => {
 
   return (
     <ToastContext.Provider value={{ addToast, removeToast, toasts }}>
-      {children}
+      {}
     </ToastContext.Provider>
   );
 };
