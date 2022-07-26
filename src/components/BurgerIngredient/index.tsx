@@ -4,18 +4,17 @@ import "./styles.css";
 import Button from "../Button";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import { IBurgerIngredient } from "../../types/interface";
+import Popover from "../Popover";
 
 function BurgerIngredient({ min = 0 }) {
   const [count, setCount] = useState(0);
   const [produto, setProduto] = useState<IBurgerIngredient[]>([]);
-
   const [quantities, setQuantities] = useState<Record<string, number>>({});
 
   useEffect(() => {
     async function LoadBurgerIngredient() {
       const response = await api.get<IBurgerIngredient[]>("/products");
 
-      console.log(response.data);
       setProduto(response.data);
     }
 
@@ -33,19 +32,34 @@ function BurgerIngredient({ min = 0 }) {
     !isNaN(event.target.value) && setCount(+event.target.value);
   }
 
-  function handleProductIngredientsQuantity(path: string, value: number) {
+  function handleProductIngredientsQuantityIncrement(
+    path: string,
+    value: number
+  ) {
     setQuantities((oldState) => {
       const updatedState: Record<string, number> = {};
       Object.assign(updatedState, oldState);
       Object.assign(updatedState, { [path]: value + 1 });
+      return updatedState;
+    });
+  }
 
+  function handleProductIngredientsQuantityDecrement(
+    path: string,
+    value: number
+  ) {
+    if (value === 0) return;
+    setQuantities((oldState) => {
+      const updatedState: Record<string, number> = {};
+      Object.assign(updatedState, oldState);
+      Object.assign(updatedState, { [path]: value - 1 });
       return updatedState;
     });
   }
 
   return (
     <>
-      <section>
+      <section className="section__ingredient">
         {produto.map(({ id, ingredients }) => (
           <div className="ingredient__container" key={id}>
             <div className="ingredient__container-card">
@@ -67,17 +81,28 @@ function BurgerIngredient({ min = 0 }) {
                           </span>
                         </div>
                         <div className="additional__buttons">
-                          <Button onClick={decrement} icon={FiMinus}></Button>
-                          <input defaultValue={quantities[item.nm_item]} />
                           <Button
                             onClick={() =>
-                              handleProductIngredientsQuantity(
+                              handleProductIngredientsQuantityDecrement(
+                                item.nm_item,
+                                quantities[item.nm_item] || 0
+                              )
+                            }
+                            icon={FiMinus}
+                          />
+
+                          <input placeholder="0" defaultValue={quantities[item.nm_item]} />
+
+                          <Button
+                            disabled={quantities[item.nm_item] === 0}
+                            onClick={() =>
+                              handleProductIngredientsQuantityIncrement(
                                 item.nm_item,
                                 quantities[item.nm_item] || 0
                               )
                             }
                             icon={FiPlus}
-                          ></Button>
+                          />
                         </div>
                       </div>
                       <hr className="additional__line" />
@@ -86,13 +111,17 @@ function BurgerIngredient({ min = 0 }) {
                 </div>
               </div>
 
-              <div className="singleCption">
-                <span>Precisa de Talher?</span>
-                <div className="singleCption-options">
-                  <span>Não</span>
-                  <input name="sim" type="radio" value="Nao" />
-                  <span>Sim</span>
-                  <input name="sim" type="radio" value="Sim" />
+              <div className="singleOption">
+                <h1>Precisa de Talher?</h1>
+                <div className="singleOption-options">
+                  <div>
+                    <span>Não</span>
+                    <input name="sim" type="radio" value="Nao" />
+                  </div>
+                  <div>
+                    <span>Sim</span>
+                    <input name="sim" type="radio" value="Sim" />
+                  </div>
                 </div>
               </div>
               <div className="ingredient__submit">

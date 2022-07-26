@@ -4,5 +4,32 @@
   align-items: center;
   gap: 112px;
   margin: 0 auto;
-  margin-top: 24px;
+
+  padding: 24px 40px;
+}
+
+@media screen and (max-width: 880px) {
+  .main {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  .singleOption {
+    background-color: transparent;
+    padding: 0;
+  }
+  .singleOption-options {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .singleOption-options div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .main {
+    gap: 10px;
+  }
 }

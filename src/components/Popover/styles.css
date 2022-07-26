@@ -1,7 +1,7 @@
 .popover__container {
-  position: relative;
-  bottom: 55px;
-  left: 570px;
+  position: absolute;
+  bottom: 735px;
+  right: 250px;
 }
 
 .popover__container-title {
@@ -16,6 +16,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 8px;
+  background: #f8f8f8;
 }
 
 .popover__container-subtitle {

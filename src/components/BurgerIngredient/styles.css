@@ -1,5 +1,12 @@
+/* .section__ingredient {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+} */
+
 .ingredient__container {
-  max-width: 439px;
+  width: 100%;
   height: auto;
   border: 1px solid #686868;
   border-radius: 8px;
@@ -15,13 +22,18 @@
 }
 
 .ingredient__container-info,
-.singleCption {
+.singleOption {
   display: flex;
   flex-direction: column;
   gap: 10px;
 
   background-color: rgba(253, 215, 14, 0.2);
   padding: 0.8rem 1rem 0.3rem 1rem;
+}
+
+.singleOption h1 {
+  font-size: 14px;
+  color: var(--text-primary);
 }
 
 .ingredient__container-info h1 {
@@ -104,21 +116,29 @@
   border: 1px solid #e8a634;
 }
 
-.singleCption-options {
+.singleOption-options {
   display: flex;
   gap: 10px;
 }
 
-.singleCption-options span {
-  font-size: 14px;
-  color: var(--text-primary);
+.singleOption-options div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
-.singleCption-options input {
+
+.singleOption-options span {
   font-size: 14px;
   color: var(--text-primary);
 }
 
-.singleCption-options button {
+.singleOption-options input {
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.singleOption-options button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,4 +167,17 @@
 
   width: 140px;
   height: 40px;
+}
+
+@media screen and (max-width: 425px) {
+  .ingredient__container {
+    border: none;
+    max-width: 100%;
+  }
+  .section__ingredient {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 }
