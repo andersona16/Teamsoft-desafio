@@ -1,29 +1,29 @@
-import { FC } from 'react';
-import { useTransition } from 'react-spring';
+import { FC } from "react";
+import { useTransition } from "react-spring";
 
-import { useToast } from '../../hooks/toast';
+import { useToast } from "../../hooks/toast";
 
-import { Container } from './styles';
-import { ToastItem } from './ToastItem';
+import "./styles.css";
+import { ToastItem } from "./ToastItem";
 
 export interface IToastProps {
   id: string;
   title: string;
-  type: 'error' | 'success' | 'info';
+  type: "error" | "success" | "info";
   message?: string;
 }
 
 const Toast: FC = () => {
   const { toasts } = useToast();
-  const toastWithAnimation = useTransition(toasts, toast => toast.id, {
-    from: { right: '-380px' },
-    enter: { right: '0' },
-    leave: { right: '-380px' },
+  const toastWithAnimation = useTransition(toasts, (toast) => toast.id, {
+    from: { right: "-380px" },
+    enter: { right: "0" },
+    leave: { right: "-380px" },
   });
 
   if (toasts) {
     return (
-      <Container>
+      <div className="toast_container">
         {toastWithAnimation.map(({ item, key, props }) => (
           <ToastItem
             key={key}
@@ -34,11 +34,11 @@ const Toast: FC = () => {
             animatedStyles={props}
           />
         ))}
-      </Container>
+      </div>
     );
   }
 
-  return <Container />;
+  return <div />;
 };
 
 export { Toast };

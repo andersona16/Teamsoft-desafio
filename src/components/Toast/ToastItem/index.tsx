@@ -1,15 +1,13 @@
-import { FC, useEffect, useRef } from 'react';
-import { FiCheckCircle, FiInfo, FiXCircle } from 'react-icons/fi';
-import { AnimatedValue } from 'react-spring';
+import { FC, useEffect, useRef } from "react";
+import { FiCheckCircle, FiInfo, FiXCircle } from "react-icons/fi";
+import { AnimatedValue } from "react-spring";
 
-import { useToast } from '../../../hooks/toast';
-
-import { Container } from './styles';
+import { useToast } from "../../../hooks/toast";
 
 export interface IToastProps {
   id: string;
   title: string;
-  type: 'error' | 'success' | 'info';
+  type: "error" | "success" | "info";
   message?: string;
   animatedStyles: AnimatedValue<React.CSSProperties>;
 }
@@ -34,19 +32,19 @@ const ToastItem: FC<IToastProps> = ({
   useEffect(() => {
     const timer = setTimeout(() => removeToast(id), 6000);
 
-    containerRef.current?.addEventListener('mouseenter', () =>
-      clearInterval(timer),
+    containerRef.current?.addEventListener("mouseenter", () =>
+      clearInterval(timer)
     );
 
-    containerRef.current?.addEventListener('mouseleave', () =>
-      setTimeout(() => removeToast(id), 6000),
+    containerRef.current?.addEventListener("mouseleave", () =>
+      setTimeout(() => removeToast(id), 6000)
     );
 
     return () => clearInterval(timer);
   }, [id, removeToast]);
 
   return (
-    <Container type={type} style={animatedStyles} ref={containerRef}>
+    <div>
       {iconTypes[type]}
 
       <div>
@@ -63,7 +61,7 @@ const ToastItem: FC<IToastProps> = ({
       >
         <FiXCircle size={18} />
       </button>
-    </Container>
+    </div>
   );
 };
 
